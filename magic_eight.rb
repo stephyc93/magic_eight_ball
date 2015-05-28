@@ -25,12 +25,14 @@
         20 => "Very doubtful" 
       }
     end
-  
-    def prompts_user
-      print "What question would you like the Magic 8 Ball to answer?"
 
-      user_input = gets.chomp
-      puts user_input 
+    def prompts_user(user_input)
+      print "What question would you like the Magic 8 Ball to answer?"
+      print "Type 'QUIT' to exit."
+
+      @user_input = gets.chomp
+        puts user_input 
+      
 
     end
   
@@ -39,11 +41,14 @@
       puts @choice_hash[computer_choice]
 
     end
-
-
-  # computer_choice = choice_array[computer_choice]
-  #   puts computer_choice
 end
+
+    while @continue_game = true 
+        if @user_input == "QUIT"
+          break
+        end
+    end
+
 
 m = MagicEight.new
 m.prompts_user
